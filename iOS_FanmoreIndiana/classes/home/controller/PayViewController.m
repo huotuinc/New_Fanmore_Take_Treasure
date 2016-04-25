@@ -68,14 +68,31 @@ static NSInteger _whichPay ;  //支付类型 0微信 1支付宝 2用户余额
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _whichPay = 2;
+    NSString * appExamineString = [[NSUserDefaults standardUserDefaults] stringForKey:AppExamine];
+    if ([appExamineString isEqualToString:@"1"]) {
+        _whichPay = 1;
+    } else {
+        _whichPay = 2;
+    }
+
     _AliPayDone = NO;
     _WeiPayDone = NO;
-    if ([WXApi isWXAppInstalled]) {
-        _titleArray = [NSMutableArray arrayWithArray:@[@"红包折扣",@"余额支付",@"其他支付方式",@"微信支付",@"支付宝支付",@"余额支付"]];
-    }else {
-        _titleArray = [NSMutableArray arrayWithArray:@[@"红包折扣",@"余额支付",@"其他支付方式",@"支付宝支付",@"余额支付"]];
+    
+    
+    if ([appExamineString isEqualToString:@"1"]) {
+        if ([WXApi isWXAppInstalled]) {
+            _titleArray = [NSMutableArray arrayWithArray:@[@"红包折扣",@"余额支付",@"其他支付方式",@"微信支付",@"支付宝支付"]];
+        }else {
+            _titleArray = [NSMutableArray arrayWithArray:@[@"红包折扣",@"余额支付",@"其他支付方式",@"支付宝支付"]];
+        }
+    } else {
+        if ([WXApi isWXAppInstalled]) {
+            _titleArray = [NSMutableArray arrayWithArray:@[@"红包折扣",@"余额支付",@"其他支付方式",@"微信支付",@"支付宝支付",@"余额支付"]];
+        }else {
+            _titleArray = [NSMutableArray arrayWithArray:@[@"红包折扣",@"余额支付",@"其他支付方式",@"支付宝支付",@"余额支付"]];
+        }
     }
+
     
 
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payUpdateUserInfo) name:payMoneySuccess object:nil];
@@ -552,6 +569,22 @@ static NSInteger _whichPay ;  //支付类型 0微信 1支付宝 2用户余额
             } else {
                 _whichPay = indexPath.row - 2;
             }
+            NSString * appExamineString = [[NSUserDefaults standardUserDefaults] stringForKey:AppExamine];
+            if ([appExamineString isEqualToString:@"1"]) {
+                if ([WXApi isWXAppInstalled]) {
+                    _whichPay = indexPath.row - 3;
+                }else {
+                    _whichPay = indexPath.row - 2;
+                }
+            } else {
+                if ([WXApi isWXAppInstalled]) {
+                    _whichPay = indexPath.row - 3;
+                }else {
+                    _whichPay = indexPath.row - 2;
+
+                }
+            }
+            
             theCell.buttonSelect.selected = YES;
         }
     }
@@ -574,6 +607,7 @@ static NSInteger _whichPay ;  //支付类型 0微信 1支付宝 2用户余额
         case 0:
         {
             LWLog(@"支付遇到问题");
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
             break;
         case 1:

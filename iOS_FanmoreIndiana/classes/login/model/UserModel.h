@@ -32,6 +32,8 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, assign) BOOL wexinBanded;
 @property (nonatomic, assign) BOOL xiuxiuxiu;
+@property (nonatomic, assign) BOOL forIosCheck;
+
 
 
 

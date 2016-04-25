@@ -29,6 +29,8 @@
 
 @implementation LoginController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -190,6 +192,9 @@
     NSString *fileName = [path stringByAppendingPathComponent:UserInfo];
     [NSKeyedArchiver archiveRootObject:user toFile:fileName];
     [[NSUserDefaults standardUserDefaults] setObject:Success forKey:LoginStatus];
+    //app是否在审核
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",user.forIosCheck] forKey:AppExamine];
+    LWLog(@"%@",[[NSUserDefaults standardUserDefaults] stringForKey:AppExamine]);
     //保存新的token
     [[NSUserDefaults standardUserDefaults] setObject:user.token forKey:AppToken];
     //购物车结算登陆时 需要提交数据

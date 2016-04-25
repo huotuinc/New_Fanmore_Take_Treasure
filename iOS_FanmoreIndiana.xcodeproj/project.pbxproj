@@ -2539,7 +2539,7 @@
 					"$(PROJECT_DIR)/iOS_FanmoreIndiana/classes/other/libraries/extends/WeChatSDK",
 					"$(PROJECT_DIR)/iOS_FanmoreIndiana/classes/other/支付宝",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hangzhou.hutu.takeTreasure;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.huotu.fanmore---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos9.2;
@@ -2599,7 +2599,7 @@
 					"$(PROJECT_DIR)/iOS_FanmoreIndiana/classes/other/libraries/extends/WeChatSDK",
 					"$(PROJECT_DIR)/iOS_FanmoreIndiana/classes/other/支付宝",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hangzhou.hutu.takeTreasure;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.huotu.fanmore---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos9.2;

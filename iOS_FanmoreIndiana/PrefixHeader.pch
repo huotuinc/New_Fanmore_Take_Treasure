@@ -75,10 +75,10 @@
 //#define MainUrl @"http://192.168.3.22:8080/duobao/app/"
 //#define MKMainUrl @"192.168.1.41:10001/app"
 //#define MKMainUrl @"duobao.51flashmall.com:8091/app"
-//#define MKMainUrl @"192.168.1.41:8080/duobao/app/"
+#define MKMainUrl @"192.168.1.41:8080/duobao/app/"
 
 //服务器正式地址
-#define MKMainUrl @"duobao.huobanplus.com/app"
+//#define MKMainUrl @"duobao.huobanplus.com/app"
 
 
 /**时间*/
@@ -130,6 +130,8 @@
 /*********咻咻红包***********/
 #define NOTIFICATION_ACTIVITY_START  @"NotificationActivityStart"//活动开始后刷新界面
 #define NOTIFICATION_ACTIVITY_END  @"NotificationActivityEnd"//活动结束后刷新界面
+/***********apple是否在审核**********/
+#define AppExamine @"APPExamine"
 /**********更新定时器时间************/
 #define NOTIFICATION_RESIGN_ACTIVE              @"appResignActive"
 #define NOTIFICATION_BECOME_ACTIVE              @"appBecomeActive"

@@ -25,6 +25,8 @@
 
 @implementation MineController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,7 +37,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
     
     self.pay.layer.cornerRadius = 5;
-    
+
     
     
     [self.goahead bk_whenTapped:^{
@@ -78,6 +80,12 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     self.tableView.contentOffset = CGPointMake(0, 0);
+    
+#pragma mark BC更改
+    NSString * appExamineString = [[NSUserDefaults standardUserDefaults] stringForKey:AppExamine];
+    if ([appExamineString isEqualToString:@"1"] ) {
+        self.pay.hidden = YES;
+    }
 }
 
 

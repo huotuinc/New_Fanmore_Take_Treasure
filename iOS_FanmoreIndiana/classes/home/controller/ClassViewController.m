@@ -56,7 +56,6 @@ static NSString *cellClassB=@"cellClassB";
             
             LWLog(@"%@",json[@"resultDescription"]);
             NSArray *temp = [AppCategoryListModel mj_objectArrayWithKeyValuesArray:json[@"resultData"][@"list"]];
-            
             [self.titleList removeAllObjects];
             [self.titleList addObjectsFromArray:temp];
             [_tableView reloadData];
