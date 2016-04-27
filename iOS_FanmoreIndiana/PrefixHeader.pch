@@ -143,12 +143,12 @@
 #define LoginFromMallNot @"LoginFromMallNot"  //商城登录成功后发送的通知
 #define GotoMallSecond @"GotoMallSecond" //bar点击商城载入
 
-
 #ifdef DEBUG
 #define LWLog(...) NSLog(__VA_ARGS__)
 #else
 #define LWLog(...)
-#endif 
+#endif
+
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

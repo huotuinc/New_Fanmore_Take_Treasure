@@ -101,10 +101,10 @@
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     [manager GET:urlStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        LWLog(@"%@",task.originalRequest);
+//        LWLog(@"%@",task.originalRequest);
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        LWLog(@"%@",task);
+//        LWLog(@"%@",task);
         failure(error);
         [SVProgressHUD showErrorWithStatus:@"无法连接到服务器"];
     }];

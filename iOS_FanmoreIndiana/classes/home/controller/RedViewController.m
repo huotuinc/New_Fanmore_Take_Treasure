@@ -25,8 +25,6 @@ static NSInteger clickCount = 0; //点击次数
 @interface RedViewController ()<logVCdelegate>{
     CALayer *_layer;
     CAAnimationGroup *_animaTionGroup;
-    CADisplayLink *_disPlayLink;
-    AVPlayer* myplayer;
     NSInteger _statusNumber; //用于判断当前活动的状态0 已经开始 1还没开始 2没有活动
     NSInteger _redRequestNumber;//点击多少次请求一次服务器
     NSNumber *_RedItemId; //活动期号
@@ -38,7 +36,8 @@ static NSInteger clickCount = 0; //点击次数
 }
 
 @property (nonatomic, strong) UIImageView * backImageV;
-
+@property (nonatomic, strong) CADisplayLink *disPlayLink;
+@property (nonatomic, strong) AVAudioPlayer *myplayer;
 @property (nonatomic, assign) BOOL isFirst;
 @property (nonatomic, assign) NSInteger count;//点击次数
 @property (nonatomic, assign) NSInteger redRestNumber;//红包个数
@@ -331,12 +330,11 @@ static NSInteger clickCount = 0; //点击次数
 //刷新红包剩余个数
 - (void)createTimerRedNumber {
     __block RedViewController * weakSelf = self;
-    [GCDTimerManager scheduledDispatchTimerWithName:@"timerRedNumber" timeInterval:5.f queue:dispatch_get_main_queue() repeats:YES actionOption:LastJobManagerDisabled action:^{
+    [GCDTimerManager scheduledDispatchTimerWithName:@"timerRedNumber" timeInterval:60.f queue:dispatch_get_main_queue() repeats:YES actionOption:LastJobManagerDisabled action:^{
         [weakSelf getRedPocketRestNumber];
     }];
 
-//    self.timerRedNumber = [NSTimer timerWithTimeInterval:10.f target:self selector:@selector(getRedPocketRestNumber) userInfo:nil repeats:YES];
-//    [[NSRunLoop currentRunLoop] addTimer:_timerRedNumber forMode:NSRunLoopCommonModes];
+
 
 
 }
@@ -583,32 +581,22 @@ static NSInteger clickCount = 0; //点击次数
         clickCount ++;
         //点击次数
         LWLog(@"**** %ld ****",(long)_count);
-        //百分之一的概率 发送请求
-        //        int luckNumber = arc4random() % 10;
         if (clickCount == _redRequestNumber) {
-            
             [self getXiuXiuXiu];
             clickCount = 0;
         }
-        //开始xiu动画
-        _disPlayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(click)];
-        _disPlayLink.frameInterval = 40;
-        [_disPlayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        self.isFirst = YES;
         
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        //响应咻咻动画
-        NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-            
-            
-        }];
-        NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-            //播放音效
-            [self soundComeOut];
-            [NSThread sleepForTimeInterval:2];
-        }];
-        [queue addOperation:op1];
-        [queue addOperation:op2];
+        //开始xiu动画
+        [self.disPlayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        self.isFirst = YES;
+
+        dispatch_queue_t quene = dispatch_queue_create("XiuxiuAnimation", DISPATCH_QUEUE_SERIAL);
+        dispatch_async(quene, ^{
+            if (![self.myplayer isPlaying]) {
+                [self.myplayer play];
+            }
+        });
+
         
     }
 }
@@ -628,14 +616,7 @@ static NSInteger clickCount = 0; //点击次数
     _disPlayLink = nil;
     _count++;
 }
-//播放音效
--(void)soundComeOut{
-    NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"xiuVoice" ofType:@"wav"];
-    NSURL *audioUrl = [NSURL fileURLWithPath:audioPath];
-    AVPlayerItem *item = [[AVPlayerItem alloc]initWithURL:audioUrl];
-    myplayer = [[AVPlayer alloc]initWithPlayerItem:item];
-    [myplayer play];
-}
+
 
 
 - (void)dealloc {
@@ -677,6 +658,23 @@ static NSInteger clickCount = 0; //点击次数
     NSString *fileNameAdd = [path stringByAppendingPathComponent:DefaultAddress];
     [NSKeyedArchiver archiveRootObject:address toFile:fileNameAdd];
     
+}
+
+- (CADisplayLink *)disPlayLink {
+    if (_disPlayLink == nil) {
+        _disPlayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(click)];
+        _disPlayLink.frameInterval = 40;
+    }
+    return _disPlayLink;
+}
+- (AVAudioPlayer *)myplayer {
+    if (_myplayer == nil) {
+        NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"xiuVoice" ofType:@"wav"];
+        NSData *voiceData = [NSData dataWithContentsOfFile:audioPath];
+        
+        _myplayer = [[AVAudioPlayer alloc] initWithData:voiceData error:nil];
+    }
+    return _myplayer;
 }
 - (void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

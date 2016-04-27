@@ -221,7 +221,7 @@ static NSString *payIdentify = @"payIdentifty";
         dic[@"payType"] = @(self.selectPay);
         
         [UserLoginTool loginRequestGet:@"putMoney" parame:dic success:^(id json) {
-            LWLog(@"%@",json);
+//            LWLog(@"%@",json);
             if ([json[@"systemResultCode"] intValue] == 1 && [json[@"resultCode"] intValue]==1) {
                 self.payModel = [PayModel mj_objectWithKeyValues:json[@"resultData"][@"data"]];
                 
@@ -242,7 +242,7 @@ static NSString *payIdentify = @"payIdentifty";
                 
             }
         } failure:^(NSError *error) {
-            LWLog(@"%@",error);
+//            LWLog(@"%@",error);
         }];
     }else {
         [SVProgressHUD showErrorWithStatus:@"请选择支付方式"];
@@ -318,7 +318,7 @@ static NSString *payIdentify = @"payIdentifty";
     
     //将商品信息拼接成字符串
     NSString *orderSpec = [order description];
-    LWLog(@"orderSpec = %@",orderSpec);
+//    LWLog(@"orderSpec = %@",orderSpec);
     
     //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
     id<DataSigner> signer = CreateRSADataSigner(privateKey);
@@ -331,7 +331,7 @@ static NSString *payIdentify = @"payIdentifty";
                        orderSpec, signedString, @"RSA"];
         
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-            LWLog(@"reslut = %@",resultDic);
+//            LWLog(@"reslut = %@",resultDic);
            if([resultDic[@"resultStatus"] intValue] == 9000){
                [self updateUserInfo];
            }
@@ -368,11 +368,11 @@ static NSString *payIdentify = @"payIdentifty";
             req.sign                = [dict objectForKey:@"sign"];
             [WXApi sendReq:req];
         }else{
-                        LWLog(@"提示信息%@",[dict objectForKey:@"retmsg"]);
+//                        LWLog(@"提示信息%@",[dict objectForKey:@"retmsg"]);
         }
         
     }else{
-                LWLog(@"提示信息返回错误");
+//                LWLog(@"提示信息返回错误");
         
     }
     
@@ -423,7 +423,7 @@ static NSString *payIdentify = @"payIdentifty";
         NSString * prePayid = nil;
         prePayid  = [payManager sendPrepay:params];
         
-        LWLog(@"xcaccasc%@",[payManager getDebugifo]);
+//        LWLog(@"xcaccasc%@",[payManager getDebugifo]);
         if ( prePayid != nil) {
             //获取到prepayid后进行第二次签名
             
@@ -471,7 +471,7 @@ static NSString *payIdentify = @"payIdentifty";
     [SVProgressHUD showSuccessWithStatus:@"充值成功，积分将在10分钟左右到账，可去积分商城兑换"];
     
     [UserLoginTool loginRequestPostWithFile:@"updateUserInformation" parame:nil success:^(id json) {
-        LWLog(@"%@", json);
+//        LWLog(@"%@", json);
         if ([json[@"systemResultCode"] intValue] == 1 && [json[@"resultCode"] intValue]==1) {
             [self loginSuccessWith:json[@"resultData"]];
         }else {
@@ -489,7 +489,7 @@ static NSString *payIdentify = @"payIdentifty";
 - (void)loginSuccessWith:(NSDictionary *) dic {
     
     UserModel *user = [UserModel mj_objectWithKeyValues:dic[@"user"]];
-    LWLog(@"userModel: %@",user);
+//    LWLog(@"userModel: %@",user);
     
     NSString * path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *fileName = [path stringByAppendingPathComponent:UserInfo];

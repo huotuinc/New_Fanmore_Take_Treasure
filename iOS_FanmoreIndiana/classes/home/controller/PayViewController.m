@@ -564,6 +564,7 @@ static NSInteger _whichPay ;  //支付类型 0微信 1支付宝 2用户余额
                 aCell.buttonSelect.selected = NO;
             }
             PayBTableViewCell * theCell = [_tableView cellForRowAtIndexPath:indexPath];
+            theCell.buttonSelect.selected = YES;
             if ([WXApi isWXAppInstalled]) {
                 _whichPay = indexPath.row - 3;
             } else {
@@ -585,7 +586,6 @@ static NSInteger _whichPay ;  //支付类型 0微信 1支付宝 2用户余额
                 }
             }
             
-            theCell.buttonSelect.selected = YES;
         }
     }
 }

@@ -340,7 +340,6 @@
         switch (response.errCode) {
             case WXSuccess:
                 //服务器端查询支付通知或查询API返回的结果再提示成功
-                //                NSLog(@"aaaasssss支付成功");
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:payMoneySuccess object:nil];
 //                [[NSNotificationCenter defaultCenter] postNotificationName:payMoneySuccessView object:nil];

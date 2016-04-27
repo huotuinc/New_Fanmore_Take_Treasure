@@ -88,6 +88,9 @@
     [[NSUserDefaults standardUserDefaults] setObject:Success forKey:LoginStatus];
     //保存新的token
     [[NSUserDefaults standardUserDefaults] setObject:user.token forKey:AppToken];
+    //app是否在审核
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",user.forIosCheck] forKey:AppExamine];
+    LWLog(@"%@",[[NSUserDefaults standardUserDefaults] stringForKey:AppExamine]);
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

@@ -64,6 +64,7 @@ static NSString *cellClassB=@"cellClassB";
         }
         
     } failure:^(NSError *error) {
+        LWLog(@"怎么回事");
         LWLog(@"%@",error);
     }];
     

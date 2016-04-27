@@ -316,7 +316,6 @@ static NSString *cellABMain=@"cellABMain";
 }
 
 - (void)dealloc {
-//    NSLog(@"被释放了啊啊啊啊啊啊");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 }

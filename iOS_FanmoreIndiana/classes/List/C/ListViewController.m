@@ -48,7 +48,7 @@ static NSInteger selectAllCount = 1;
 
 
     [super viewWillAppear:animated];
-    LWLog(@"viewWillAppearAAAAAAAAAA");
+//    LWLog(@"viewWillAppearAAAAAAAAAA");
 
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -172,10 +172,10 @@ static NSInteger selectAllCount = 1;
     if ([login isEqualToString:Success]) {
         [SVProgressHUD show];
         [UserLoginTool loginRequestGet:@"getShoppingList" parame:nil success:^(id json) {
-            LWLog(@"%@",json);
+//            LWLog(@"%@",json);
             if ([json[@"systemResultCode"] intValue] == 1 && [json[@"resultCode"] intValue] == 1) {
                 
-                LWLog(@"%@",json[@"resultDescription"]);
+//                LWLog(@"%@",json[@"resultDescription"]);
                 NSArray *temp = [CartModel mj_objectArrayWithKeyValuesArray:json[@"resultData"][@"list"]];
                 //            self.lastSort =json[@"resultData"][@"sort"];
                 _cartList = [NSMutableArray array];
@@ -189,7 +189,7 @@ static NSInteger selectAllCount = 1;
 
                 
             }else{
-                LWLog(@"%@",json[@"resultDescription"]);
+//                LWLog(@"%@",json[@"resultDescription"]);
             }
             [SVProgressHUD dismiss];
             if (_cartList.count == 0) {
@@ -212,7 +212,7 @@ static NSInteger selectAllCount = 1;
         } failure:^(NSError *error) {
             [SVProgressHUD dismiss];
             [_tableView.mj_header endRefreshing];
-            LWLog(@"%@",error);
+//            LWLog(@"%@",error);
         }];
 
     }
@@ -268,15 +268,15 @@ static NSInteger selectAllCount = 1;
     
     
     [UserLoginTool loginRequestPostWithFile:@"deleteShoppingCart" parame:dic success:^(id json) {
-        LWLog(@"%@",json);
+//        LWLog(@"%@",json);
         if ([json[@"systemResultCode"] intValue] == 1 && [json[@"resultCode"] intValue] == 1) {
-            LWLog(@"%@",json[@"resultDescription"]);
+//            LWLog(@"%@",json[@"resultDescription"]);
         }else {
-            LWLog(@"%@",json[@"resultDescription"]);
+//            LWLog(@"%@",json[@"resultDescription"]);
         }
         
     } failure:^(NSError *error) {
-        LWLog(@"%@",error);
+//        LWLog(@"%@",error);
         
         
     } withFileKey:nil];
@@ -332,9 +332,9 @@ static NSInteger selectAllCount = 1;
     [cartsString appendString:@"]"];
     dic[@"carts"] = cartsString;
     [UserLoginTool loginRequestPostWithFile:@"balance" parame:dic success:^(id json) {
-        LWLog(@"%@",json);
+//        LWLog(@"%@",json);
         if ([json[@"systemResultCode"] intValue] == 1 && [json[@"resultCode"] intValue] == 1) {
-            LWLog(@"%@",json[@"resultDescription"]);
+//            LWLog(@"%@",json[@"resultDescription"]);
             _balanceModel = [AppBalanceModel mj_objectWithKeyValues:json[@"resultData"][@"data"]];
             PayViewController *pay = [[PayViewController alloc] init];
             pay.payModel = _balanceModel;
@@ -345,11 +345,11 @@ static NSInteger selectAllCount = 1;
             _bottomView.buttonGo.userInteractionEnabled = YES;
             [SVProgressHUD showInfoWithStatus:@"商品信息发生改变"];
 
-            LWLog(@"%@",json[@"resultDescription"]);
+//            LWLog(@"%@",json[@"resultDescription"]);
         }
         
     } failure:^(NSError *error) {
-        LWLog(@"%@",error);
+//        LWLog(@"%@",error);
         _bottomView.buttonGo.userInteractionEnabled = YES;
         [SVProgressHUD showInfoWithStatus:@"商品信息发生改变"];
 
@@ -697,7 +697,7 @@ static NSInteger selectAllCount = 1;
     NSString * filename = [[array objectAtIndex:0] stringByAppendingPathComponent:LOCALCART];
     //写入
     [data writeToFile:filename atomically:YES];
-    LWLog(@"归档成功");
+//    LWLog(@"归档成功");
 
 
 }
@@ -848,7 +848,7 @@ static NSInteger selectAllCount = 1;
 }
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    LWLog(@"tf结束编辑");
+//    LWLog(@"tf结束编辑");
     NSInteger row = textField.tag -300;
     CartModel * model = _cartList[row];
     //倍数值
