@@ -76,6 +76,8 @@
         _labelTitle.text = model.title;
         if ([model.areaAmount isEqualToNumber:@0]) {
             _imageVKind.hidden = YES;
+        } else {
+            _imageVKind.hidden = NO;
         }
     }
     

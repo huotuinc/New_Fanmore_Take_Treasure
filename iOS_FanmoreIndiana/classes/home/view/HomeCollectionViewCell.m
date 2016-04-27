@@ -47,7 +47,10 @@
     _model = model;
     
     if ([model.areaAmount integerValue] > 0) {
+        _imageVState.hidden = NO;
         _imageVState.image=[UIImage imageNamed:@"zhuanqu_a"];
+    }else {
+        _imageVState.hidden = YES;
     }
     _labelName.text=model.title;
     CGFloat percent=(model.toAmount.floatValue -model.remainAmount.floatValue)/(model.toAmount.floatValue);
