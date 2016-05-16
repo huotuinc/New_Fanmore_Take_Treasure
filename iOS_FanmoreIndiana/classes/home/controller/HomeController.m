@@ -159,7 +159,7 @@ static NSInteger orderNumberNow=0;//记录排序的当前点击
     titleLabel.font = [UIFont boldSystemFontOfSize:FONT_SIZE(36)];
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"奇兵夺宝";
+//    titleLabel.text = @"奇兵夺宝";
     self.navigationItem.titleView = titleLabel;
 }
 #pragma mark 获取数据(上拉刷新) 最好不请求中奖消息

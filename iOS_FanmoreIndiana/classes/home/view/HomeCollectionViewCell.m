@@ -15,7 +15,6 @@
     [UILabel changeLabel:_labelName AndFont:28 AndColor:COLOR_TEXT_TITILE];
     [UILabel changeLabel:_labelProgress AndFont:24 AndColor:COLOR_TEXT_CONTENT];
     [UIButton changeButton:_joinList AndFont:24 AndTitleColor:COLOR_SHINE_RED AndBackgroundColor:[UIColor whiteColor] AndBorderColor:COLOR_SHINE_RED AndCornerRadius:3 AndBorderWidth:1];
-    
     _viewProgress.transform=CGAffineTransformMakeScale(1.0f, 1.0f);
     _viewProgress.clipsToBounds=YES;
     //设置进度条颜色
