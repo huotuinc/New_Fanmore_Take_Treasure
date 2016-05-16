@@ -23,6 +23,8 @@
 //微信SDK头文件
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
+
+#import "HTUserModel.h"
 @interface LoginController ()<UITextFieldDelegate>
 
 @end
@@ -121,9 +123,11 @@
         if (state == SSDKResponseStateSuccess) {
             LWLog(@"%@",user);
             
+            NSString *unionid = [user.rawData objectForKey:@"unionid"];
+            
             NSMutableDictionary *dic = [NSMutableDictionary dictionary];
             dic[@"username"] = user.nickname;
-            dic[@"unionId"] = user.uid;
+            dic[@"unionId"] = unionid;
             dic[@"head"] = user.icon;
             dic[@"type"] = @"1";
             

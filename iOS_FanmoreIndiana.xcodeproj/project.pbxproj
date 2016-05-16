@@ -255,6 +255,7 @@
 		F2C426511C882A9000C9CEF0 /* ListNumberMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C4264F1C882A9000C9CEF0 /* ListNumberMainTableViewCell.xib */; };
 		F2C426551C882C2B00C9CEF0 /* ListNumberBottomCView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C426531C882C2B00C9CEF0 /* ListNumberBottomCView.m */; };
 		F2C426561C882C2B00C9CEF0 /* ListNumberBottomCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C426541C882C2B00C9CEF0 /* ListNumberBottomCView.xib */; };
+		F2C497C11CD990B7000A0E26 /* HTUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C497C01CD990B7000A0E26 /* HTUserModel.m */; };
 		F2C4DD0E1C98ED84005BCEEF /* ArchiveLocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C4DD0D1C98ED84005BCEEF /* ArchiveLocalData.m */; };
 		F2C4F6FF1C914EE800EE133C /* AppWinningInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C4F6FE1C914EE800EE133C /* AppWinningInfoModel.m */; };
 		F2C7A4D21C75AD49002E08FA /* DetailNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C7A4D11C75AD49002E08FA /* DetailNumberViewController.m */; };
@@ -822,6 +823,8 @@
 		F2C426521C882C2B00C9CEF0 /* ListNumberBottomCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListNumberBottomCView.h; sourceTree = "<group>"; };
 		F2C426531C882C2B00C9CEF0 /* ListNumberBottomCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListNumberBottomCView.m; sourceTree = "<group>"; };
 		F2C426541C882C2B00C9CEF0 /* ListNumberBottomCView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListNumberBottomCView.xib; sourceTree = "<group>"; };
+		F2C497BF1CD990B7000A0E26 /* HTUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTUserModel.h; sourceTree = "<group>"; };
+		F2C497C01CD990B7000A0E26 /* HTUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTUserModel.m; sourceTree = "<group>"; };
 		F2C4DD0C1C98ED84005BCEEF /* ArchiveLocalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveLocalData.h; sourceTree = "<group>"; };
 		F2C4DD0D1C98ED84005BCEEF /* ArchiveLocalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArchiveLocalData.m; sourceTree = "<group>"; };
 		F2C4F6FD1C914EE800EE133C /* AppWinningInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWinningInfoModel.h; sourceTree = "<group>"; };
@@ -1706,6 +1709,8 @@
 				601769A51C589121009E503F /* AdressModel.m */,
 				605E15901C5A0EB500DBF8BA /* GlobalModel.h */,
 				605E15911C5A0EB500DBF8BA /* GlobalModel.m */,
+				F2C497BF1CD990B7000A0E26 /* HTUserModel.h */,
+				F2C497C01CD990B7000A0E26 /* HTUserModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1998,7 +2003,7 @@
 				TargetAttributes = {
 					60DD42991C43A8F90041572F = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = U9B3995C94;
+						DevelopmentTeam = Q3B3AD6JJH;
 					};
 					60DD42B21C43A8F90041572F = {
 						CreatedOnToolsVersion = 7.2;
@@ -2253,6 +2258,7 @@
 				600042B31C746CA400CEDC7A /* PayModel.m in Sources */,
 				F267B9991C96C8F000B169F3 /* HomeSendRedPocketCView.m in Sources */,
 				F2977D621CAA14A400DCD74E /* HomeCollectionTopCView.m in Sources */,
+				F2C497C11CD990B7000A0E26 /* HTUserModel.m in Sources */,
 				60EB31ED1C5764B9006C070B /* ForgetSecondController.m in Sources */,
 				60FFF3101C4E1B8800A93D7E /* UITableView+CJ.m in Sources */,
 				F29553991C91435E00D82B67 /* RedWaitCView.m in Sources */,
@@ -2493,8 +2499,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Hot Technology Co., Ltd. (U9B3995C94)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Hot Technology Co., Ltd. (U9B3995C94)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2553,8 +2559,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Hot Technology Co., Ltd. (U9B3995C94)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Hot Technology Co., Ltd. (U9B3995C94)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

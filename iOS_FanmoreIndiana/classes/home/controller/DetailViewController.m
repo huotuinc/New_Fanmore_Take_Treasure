@@ -537,7 +537,7 @@ static NSString * cellDFirst=@"cellDFirst";
                 self.issueId = _detailModel.issueId;
                 [self joinShoppingCart];
                 if (!_isExist) {
-                    _bottomView.labelCount.text = [NSString stringWithFormat:@"%d",self.cartCount + 1];
+                    _bottomView.labelCount.text = [NSString stringWithFormat:@"%ld",self.cartCount + 1];
                 }
             }else{
 #pragma mark 加入购物车 未登陆
@@ -550,7 +550,7 @@ static NSString * cellDFirst=@"cellDFirst";
                 }
                 //列表中无本商品 计数+1
                 if (!_isExist) {
-                    _bottomView.labelCount.text = [NSString stringWithFormat:@"%d",self.cartCount + 1];
+                    _bottomView.labelCount.text = [NSString stringWithFormat:@"%ld",self.cartCount + 1];
                 }
                 [SVProgressHUD showSuccessWithStatus:@"加入清单成功"];
             }
