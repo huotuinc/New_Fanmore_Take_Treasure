@@ -1465,7 +1465,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="jz" translatesAutoresizingMaskIntoConstraints="NO" id="TnG-Pq-WT5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jz" translatesAutoresizingMaskIntoConstraints="NO" id="TnG-Pq-WT5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                             </imageView>
                         </subviews>

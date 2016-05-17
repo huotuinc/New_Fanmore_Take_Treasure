@@ -58,8 +58,8 @@
 #define XinLangRedirectUri @"https://api.weibo.com/oauth2/default.html"
 
 /**QQ**/
-#define QQAppKey @"1105178159"
-#define QQappSecret @"jF0YdvmJ8UW38dZL"
+#define QQAppKey @"1105308834"
+#define QQappSecret @"2xsJBcZ0oOnVegze"
 
 /**微信*/ 
 #define WeiXinAppID @"wx7f47df3d33fd57f7"
