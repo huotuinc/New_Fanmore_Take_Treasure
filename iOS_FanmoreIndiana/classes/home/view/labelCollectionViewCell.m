@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelMain AndFont:26 AndColor:COLOR_TEXT_DATE];
     _labelMain.backgroundColor=[UIColor whiteColor];
     self.backgroundColor = [UIColor whiteColor];

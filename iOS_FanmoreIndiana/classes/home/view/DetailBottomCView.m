@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UIButton changeButton:_buttonGo AndFont:28 AndTitleColor:[UIColor whiteColor] AndBackgroundColor:[UIColor orangeColor] AndBorderColor:[UIColor orangeColor] AndCornerRadius:3 AndBorderWidth:1];
     
     [UIButton changeButton:_buttonAdd AndFont:28 AndTitleColor:[UIColor orangeColor] AndBackgroundColor:[UIColor whiteColor] AndBorderColor:[UIColor orangeColor] AndCornerRadius:3 AndBorderWidth:1];

@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _viewBack.backgroundColor=COLOR_BACK_MAIN;
     _viewBack.layer.cornerRadius=3;
     _viewBack.layer.masksToBounds=YES;

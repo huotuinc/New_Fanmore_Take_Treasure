@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelContent AndFont:22 AndColor:COLOR_TEXT_DATE];
     for (int i =0; i<2; i++) {
         UIImageView *imageV = [self viewWithTag:200+i];

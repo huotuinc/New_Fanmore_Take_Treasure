@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVLineA.image = [UIImage imageNamed:@"line_huise"];
     _imageVLineB.image = [UIImage imageNamed:@"line_huise"];
     _imageVLineC.image = [UIImage imageNamed:@"line_huise"];

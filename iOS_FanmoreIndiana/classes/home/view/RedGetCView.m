@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelCount AndFont:30 AndColor:COLOR_SHINE_RED];
     [UILabel changeLabel:_labelMoney AndFont:30 AndColor:COLOR_SHINE_RED];
     _labelCount.text = @"恭喜你获得了一个红包";

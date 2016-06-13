@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     for (int i =0 ; i<5; i++) {
         UILabel *label=[self viewWithTag:100+i];
         [UILabel changeLabel:label AndFont:22 AndColor:COLOR_TEXT_TITILE];

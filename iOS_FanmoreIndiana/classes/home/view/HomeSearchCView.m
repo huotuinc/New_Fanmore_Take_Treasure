@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    [super awakeFromNib];
     _imageVSearch.image = [UIImage imageNamed:@"search"];
     
     

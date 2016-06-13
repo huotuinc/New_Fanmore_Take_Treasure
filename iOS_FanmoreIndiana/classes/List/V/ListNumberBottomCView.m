@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _viewBase.backgroundColor = COLOR_BACK_MAIN;
     _imageVLA.image = [UIImage imageNamed:@"line_huise"];
     _imageVLB.image = [UIImage imageNamed:@"line_huise"];

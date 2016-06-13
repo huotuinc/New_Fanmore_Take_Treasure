@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelA AndFont:26 AndColor:COLOR_TEXT_CONTENT];
     [UILabel changeLabel:_labelB AndFont:24 AndColor:COLOR_TEXT_DATE];
     [UILabel changeLabel:_labelC AndFont:24 AndColor:COLOR_BUTTON_ORANGE];

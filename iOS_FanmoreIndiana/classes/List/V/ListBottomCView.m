@@ -13,6 +13,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelNotice AndFont:22 AndColor:nil];
     [UILabel changeLabel:_labelMoney AndFont:22 AndColor:nil];
     [UILabel changeLabel:_labelAll AndFont:22 AndColor:nil];

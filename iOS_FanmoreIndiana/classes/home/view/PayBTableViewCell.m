@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVLine.image = [UIImage imageNamed:@"line_huise"];
     _imageVBottom.image = [UIImage imageNamed:@"line_huise"];
     [_buttonSelect setBackgroundImage:[UIImage imageNamed:@"choose00"] forState:UIControlStateNormal];

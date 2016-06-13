@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelItem AndFont:24 AndColor:COLOR_TEXT_DATE];
     _viewItem.backgroundColor=COLOR_BACK_MAIN;
     _viewItem.layer.borderColor=COLOR_BACK_MAIN.CGColor;

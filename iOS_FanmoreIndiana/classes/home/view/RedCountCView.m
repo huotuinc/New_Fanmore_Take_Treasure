@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelAA AndFont:30 AndColor:COLOR_PROGRESS_A];[UILabel changeLabel:_labelAA AndFont:30 AndColor:COLOR_PROGRESS_A];
     [UILabel changeLabel:_labelBB AndFont:30 AndColor:COLOR_PROGRESS_A];
     [UILabel changeLabel:_labelTimeA AndFont:30 AndColor:COLOR_PROGRESS_A];

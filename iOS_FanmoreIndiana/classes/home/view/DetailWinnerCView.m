@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVState.image=[UIImage imageNamed:@"huojiang"];
     _imageVLuck.image=[UIImage imageNamed:@"di"];
     _imageVHead.image=[UIImage imageNamed:@"error"];

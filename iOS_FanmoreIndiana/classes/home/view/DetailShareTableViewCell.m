@@ -13,6 +13,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVPoint.image=[UIImage imageNamed:@"wuyu"];
 //    _imageVHead.image=[UIImage imageNamed:@"home_content_shaidan"];
 //    _imageVA.image=[UIImage imageNamed:@"weixin"];

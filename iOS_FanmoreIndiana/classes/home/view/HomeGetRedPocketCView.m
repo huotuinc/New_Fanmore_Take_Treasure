@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVBack.image = [UIImage imageNamed:@"fahongbao"];
     _imageVClose.image = [UIImage imageNamed:@"cha"];
     _imageVMoney.image = [UIImage imageNamed:@"jingbi"];

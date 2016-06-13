@@ -11,7 +11,8 @@
 @implementation ListNumberHeadCView
 
 - (void)awakeFromNib {
-    // Initialization code
+    // Initialization code.
+    [super awakeFromNib];
     [UILabel changeLabel:_labelA AndFont:32 AndColor:COLOR_TEXT_CONTENT];
     [UILabel changeLabel:_labelB AndFont:32 AndColor:COLOR_TEXT_CONTENT];
     [UIButton changeButton:_buttonGo AndFont:30 AndTitleColor:[UIColor whiteColor] AndBackgroundColor:COLOR_BUTTON_ORANGE AndBorderColor:COLOR_BUTTON_ORANGE AndCornerRadius:3 AndBorderWidth:1];

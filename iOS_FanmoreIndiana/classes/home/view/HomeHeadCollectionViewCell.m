@@ -11,7 +11,8 @@
 @implementation HomeHeadCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    // Initialization code.
+    [super awakeFromNib];
 }
 
 @end

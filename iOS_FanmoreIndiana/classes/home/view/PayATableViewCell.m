@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVLine.image = [UIImage imageNamed:@"line_huise"];
     _imageVTop.image = [UIImage imageNamed:@"line_huise"];
     [UILabel changeLabel:_labelA AndFont:26 AndColor:COLOR_TEXT_CONTENT];

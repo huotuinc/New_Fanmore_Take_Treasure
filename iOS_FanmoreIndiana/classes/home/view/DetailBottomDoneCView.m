@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UIButton changeButton:_buttonGo AndFont:28 AndTitleColor:[UIColor whiteColor] AndBackgroundColor:[UIColor orangeColor] AndBorderColor:[UIColor orangeColor] AndCornerRadius:3 AndBorderWidth:1];
     [UILabel changeLabel:_labelNew AndFont:28 AndColor:COLOR_TEXT_TITILE];
     _imageVLine.image =[UIImage imageNamed:@"line_huise"];

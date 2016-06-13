@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     for (int i =0; i<3; i++) {
         UIImageView *imageV = [self viewWithTag:200+i];
         imageV.image =[UIImage imageNamed:@"line_huise"];

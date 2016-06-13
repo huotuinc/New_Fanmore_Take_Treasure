@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [UILabel changeLabel:_labelA AndFont:26 AndColor:[UIColor whiteColor]];
     [UILabel changeLabel:_labelB AndFont:24 AndColor:[UIColor whiteColor]];
     _viewBase.backgroundColor = COLOR_BUTTON_ORANGE;

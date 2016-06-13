@@ -13,6 +13,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     NSArray *arrTitle=@[@"分类",@"专区商品",@"晒单",@"常见问题",@"红包专区"];
     for (int i=0 ; i<5 ; i++) {
         UILabel *label=[self viewWithTag:100+i];

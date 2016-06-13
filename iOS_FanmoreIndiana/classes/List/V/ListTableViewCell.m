@@ -42,6 +42,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _imageVGoods.image=[UIImage imageNamed:@"mine_buy"];
     for (int i=0; i<2; i++) {
         UIButton *btn=[self viewWithTag:200+i];

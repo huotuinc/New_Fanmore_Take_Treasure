@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _viewProgress.transform=CGAffineTransformMakeScale(1.0f, 1.0f);
     _viewProgress.clipsToBounds=YES;
     //设置进度条颜色

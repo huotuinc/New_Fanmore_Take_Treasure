@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     _viewBase.backgroundColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.8];
     [UILabel changeLabel:_labelRest AndFont:30 AndColor:[UIColor whiteColor]];
     [UILabel changeLabel:_labelTime AndFont:30 AndColor:[UIColor whiteColor]];
